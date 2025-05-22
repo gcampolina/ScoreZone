@@ -2,6 +2,7 @@ import "./style.css";
 import GtaImg from "../../assets/gtav.jpg";
 import ValorantImg from "../../assets/valorant.jpg";
 import LolImg from "../../assets/lol.jpg";
+import FreeImg from "../../assets/freefire.jpg";
 
 const jogos = [
   {
@@ -21,6 +22,12 @@ const jogos = [
     nome: "Valorant",
     ano: 2020,
     imagem: ValorantImg,
+  },
+  {
+    id: 4,
+    nome: "Freefire",
+    ano: 2017,
+    imagem: FreeImg,
   },
   // mais jogos...
 ];
