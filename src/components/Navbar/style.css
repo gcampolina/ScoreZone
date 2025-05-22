@@ -6,10 +6,16 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+
+.start-nav, .end-nav {
+  gap: 50px;
+  display: flex;
+  align-items: center;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .nav-logo {
@@ -20,13 +26,63 @@
 }
 
 .nav-links a {
+  padding: 10px;
+  text-transform: uppercase;
   margin-left: 20px;
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #4fd1c5; /* um azulzinho suave */
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #404064;
+}
+
+
+.nav-search {
+  border-radius: 10px;
+  background-color: #fff;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  
+}
+
+.search-input {
+  padding: 0 20px;
+  width: 400px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  border-radius: 10px;
+}
+
+.search-button {
+  width: 50px;
+  background-color: #fff;
+  font-size: 18px;
+  color: #404064;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  opacity: 80%;
+}
+
+.btnEntrar {
+  padding: 10px 16px;
+  background-color: #404064;
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.btnEntrar:hover {
+  background-color: #495cc7;
 }

@@ -1,0 +1,16 @@
+.estrelas {
+  display: flex;
+  gap: 10px;
+  font-size: 30px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.estrela {
+  color: #555; /* cor base */
+  transition: color 0.3s;
+}
+
+.estrela.ativa {
+  color: gold; /* estrela preenchida */
+}

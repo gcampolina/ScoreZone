@@ -1,0 +1,35 @@
+.detalhes-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1e1e2f; /* cor base igual da home */
+  overflow: hidden;
+  color: white;
+}
+
+
+/* Conteúdo da página */
+.detalhes-content {
+  gap: 40px;
+  display: flex;
+  padding: 80px;
+  max-width: 1800px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.detalhes-info p{
+  
+  color: #ccc;
+}
+
+.detalhes-head {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detalhes-head img {
+  margin-bottom: 20px;
+}
