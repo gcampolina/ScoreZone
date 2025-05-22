@@ -1,5 +1,8 @@
 /* components/Navbar.css */
 .navbar {
+  top: 0;
+  z-index: 1000;
+  position: sticky;
   background-color: #1e1e2f;
   color: #fff;
   padding: 10px 20px;
@@ -40,37 +43,6 @@
   background-color: #404064;
 }
 
-
-.nav-search {
-  border-radius: 10px;
-  background-color: #fff;
-  display: flex;
-  overflow: hidden;
-  align-items: center;
-  
-}
-
-.search-input {
-  padding: 0 20px;
-  width: 400px;
-  border: none;
-  font-size: 18px;
-  outline: none;
-  border-radius: 10px;
-}
-
-.search-button {
-  width: 50px;
-  background-color: #fff;
-  font-size: 18px;
-  color: #404064;
-  border: none;
-  cursor: pointer;
-}
-
-.search-button:hover {
-  opacity: 80%;
-}
 
 .btnEntrar {
   padding: 10px 16px;

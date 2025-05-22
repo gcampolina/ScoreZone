@@ -70,3 +70,18 @@ p {
   color: #fff;
   flex-grow: 1;
 }
+
+
+
+
+.search-input {
+  background-color: #1e1e2f;
+  color: #fff;
+  margin-bottom: 30px;
+  padding: 8px 20px;
+  width: 400px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  border-radius: 10px;
+}
