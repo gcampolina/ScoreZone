@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "./style.css";
+import { useBusca } from "../../hooks/BuscaContext.jsx";
 
 export default function NavBar() {
+  const { busca, setBusca } = useBusca();
+
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -22,6 +25,8 @@ export default function NavBar() {
               type="text"
               placeholder="Buscar por um jogo.."
               className="search-input"
+              value={busca}
+              onChange={(e) => setBusca(e.target.value)}
             />
             <button className="search-button">
               <i className="fa-solid fa-magnifying-glass"></i>
