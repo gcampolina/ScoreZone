@@ -1,6 +1,6 @@
 .login-container {
   max-width: 400px;
-  margin: 3rem auto;
+  margin: 100px auto;
   padding: 70px;
   background: #f2f2f2;
   border-radius: 10px;
@@ -37,4 +37,36 @@ button {
 
 button:hover {
     opacity: 80%;
+}
+
+.erroContainer {
+  user-select: none;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  
+}
+
+.erro-login {
+  color: #fff;
+  background-color: #e74c3c;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.erro-login {
+  animation: fadeIn 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }

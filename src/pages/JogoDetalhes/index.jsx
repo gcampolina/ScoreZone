@@ -30,7 +30,10 @@ export default function JogoDetalhes() {
           <img
             src={jogo.imagem}
             alt={jogo.nome}
-            style={{ maxWidth: "300px", borderRadius: "10px" }}
+            style={{ width: "300px", maxHeight: "300px", borderRadius: "10px"}}
+
+
+
           />
           <h2>Avalie agora:</h2>
           <Estrelas />

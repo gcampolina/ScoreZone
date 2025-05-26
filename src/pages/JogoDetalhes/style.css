@@ -16,14 +16,15 @@
   max-width: 1800px;
   margin: 0 auto;
   z-index: 1;
+  user-select: none;
 }
 
-.detalhes-info p{
-  
+.detalhes-info p{ 
   color: #ccc;
 }
 
 .detalhes-head {
+  
   font-size: 14px;
   display: flex;
   flex-direction: column;

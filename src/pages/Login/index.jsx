@@ -8,16 +8,18 @@ export default function Login({ setIsAuthenticated }) {
 
   const [usuario, setUsuario] = useState("");
   const [senha, setSenha] = useState("");
+  const [erroLogin, setErroLogin] = useState("");
   const navigate = useNavigate();
 
   async function handleLogin(e) {
     e.preventDefault();
-
+    setErroLogin("");
     try {
       const response = await axios.post('http://localhost:3000/login', {email: usuario, senha });
 
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
+        localStorage.setItem("nomeUsuario", response.data.nome);
         setIsAuthenticated(true);
         navigate('/');
       } 
@@ -27,22 +29,32 @@ export default function Login({ setIsAuthenticated }) {
       const { status, data } = error.response;
 
       if (status === 404) {
-        alert('Usuário não encontrado');
+        setErroLogin('Usuário não encontrado');
       } else if (status === 401) {
-        alert('Senha incorreta');
+        setErroLogin('Senha incorreta');
       } else {
-        alert('Erro no servidor: ' + data.error);
+        setErroLogin('Erro no servidor: ' + data.error);
       }
     } else {
       // Erros inesperados (sem resposta do servidor)
-      alert('Erro ao fazer login. Tente novamente.');
+      setErroLogin('Erro ao fazer login. Tente novamente.');
     }
+
+    setTimeout(() => {
+        setErroLogin(false);
+        setTimeout(() => setErroLogin(''), 500); // espera o fade-out terminar pra remover o texto
+      }, 3000);
+    
 
     console.error(error);
   }
 }
 
   return (
+<>
+<div className="erroContainer">
+{erroLogin && <div className="erro-login">{erroLogin}</div>}
+</div>
 
    <div className="login-container">
       <h1>Login</h1>
@@ -53,8 +65,8 @@ export default function Login({ setIsAuthenticated }) {
       </form>
     </div>
    
-    
-
+   
+</>
 
   );
 }
