@@ -10,3 +10,9 @@ body {
   width: 100vw;
   background: linear-gradient(140deg, #000000 0%, #29213a 100%);
 }
+
+.scrolling-wave {
+  width: 100%;
+  margin-top: 50px; /* opcional: dá um respiro entre o conteúdo e a wave */
+}
+

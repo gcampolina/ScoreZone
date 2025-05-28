@@ -5,14 +5,16 @@
   background-color: #1e1e2f; /* cor base igual da home */
   overflow: hidden;
   color: white;
+  
 }
 
 
 /* Conteúdo da página */
 .detalhes-content {
+  
   gap: 40px;
   display: flex;
-  padding: 80px;
+  padding: 180px;
   max-width: 1800px;
   margin: 0 auto;
   z-index: 1;

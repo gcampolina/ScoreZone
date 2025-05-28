@@ -1,17 +1,24 @@
 /* components/Navbar.css */
 .navbar {
+  position: absolute;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 40px auto;
   z-index: 1000;
-  position: sticky;
-  background-color: #1e1e2f;
+  background-color: transparent;
   color: #fff;
+  border-radius: 12px;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: 80%;
 }
 
+.start-nav img {
+  width: 100px;
+}
 
-.start-nav, .end-nav {
-  gap: 50px;
+.start-nav, .end-nav, .nav-links {
+  gap: 150px;
   display: flex;
   align-items: center;
 }
@@ -27,6 +34,8 @@
   color: #fff;
   text-decoration: none;
 }
+
+
 
 .nav-links a {
   padding: 10px;
@@ -46,15 +55,41 @@
 
 .btnEntrar {
   padding: 10px 16px;
-  background-color: #404064;
+  background-color: transparent;
   color: white;
   border-radius: 6px;
   font-weight: 600;
   text-decoration: none;
   transition: background-color 0.3s ease;
   font-size: 1rem;
+  border: 1px solid #fff;
 }
 
 .btnEntrar:hover {
-  background-color: #495cc7;
+  color: #000;
+  background-color: #fff;
 }
+
+
+
+/* CSS PRO BTN ENTRAR */
+
+.bn54 {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 45px;
+  width: 130px;
+  opacity: 1;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+
+

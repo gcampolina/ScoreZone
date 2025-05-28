@@ -1,6 +1,8 @@
 import { useNavigate, Link } from "react-router-dom";
 import "./style.css";
 import { useEffect, useState } from "react";
+import logo from '../../assets/logo.png';
+
 
 export default function NavBar({ isAuthenticated, setIsAuthenticated }) {
 
@@ -30,27 +32,30 @@ useEffect(() => {
 
         <div className="start-nav">
           <Link to="/" className="nav-logo">
-            ScoreZone
+            <img src={logo} alt="Logo da ScoreZone" />
           </Link>
-          <div className="nav-links">
-            <Link to="/">Home</Link>
-          </div>
+          
         </div>
 
+        <div className="nav-links">
+            <Link to="/">Home</Link>
+            <Link to="/jogos">Buscar jogo</Link>
+            <Link to="/">Sobre nós</Link>
+        </div>
 
         <div className="end-nav">
           
           {isAuthenticated && <p>Bem-vindo, <strong>{nomeUsuario}</strong></p>}
           {isAuthenticated ? (
             
-          <Link className="btnEntrar" to="/login" onClick={handleLogout}>
+          <Link className="btnEntrar" to="/" onClick={handleLogout}>
              Sair <i className="fa-solid fa-right-to-bracket"></i>
           </Link>
 
           ) : (
 
           <Link className="btnEntrar" to="/login">
-             Entrar <i className="fa-solid fa-right-to-bracket"></i>
+            Entrar <i class="fa-solid fa-right-to-bracket"></i>
           </Link>
           )}
         </div>

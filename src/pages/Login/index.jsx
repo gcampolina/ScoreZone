@@ -117,12 +117,15 @@ if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
   return (
     <>
 
+    <div className="msgContainer">
       <div className="erroContainer">
         {sucess && <div className="sucess-login">{sucess}</div>}
       </div>
       <div className="erroContainer">
         {erroLogin && <div className="erro-login">{erroLogin}</div>}
       </div>
+    </div>
+      
 
       <div className="login-container">
         <h1>{mostrarCadastro ? 'Cadastro' : 'Login'}</h1>
@@ -141,8 +144,10 @@ if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
               value={senhaLogin}
               onChange={(e) => setSenhaLogin(e.target.value)}
             />
-            <button type="submit">Entrar</button>
+            <button className="btnEntrar" type="submit">Entrar</button>
+            <div className="linkLoginRegister">
             <p>Não possui uma conta? <a href="#" onClick={e => { e.preventDefault(); setMostrarCadastro(true)}}>Cadastrar-se agora!</a></p>
+            </div>
           </form>
         ) : (
           <form className="formLogin" onSubmit={handleCadastro}>
@@ -170,11 +175,14 @@ if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
               value={senhaCadastro}
               onChange={(e) => setSenhaCadastro(e.target.value)}
             />
-            <button type="submit">Cadastrar</button>
+            <button className="btnEntrar" type="submit">Cadastrar</button>
+            <div className="linkLoginRegister">
             <p>Já tem uma conta? <a href="#" onClick={() => setMostrarCadastro(false)}>Entrar agora!</a></p>
+            </div>
           </form>
         )}
       </div>
+    
     </>
   );
 }
