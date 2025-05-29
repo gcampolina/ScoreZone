@@ -1,8 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import "./style.css";
 import { useEffect, useState } from "react";
-import logo from '../../assets/logo.png';
-
+import logo from '../../../public/assets/logo.png';
 
 export default function NavBar({ isAuthenticated, setIsAuthenticated }) {
 
@@ -39,23 +38,28 @@ useEffect(() => {
 
         <div className="nav-links">
             <Link to="/">Home</Link>
-            <Link to="/jogos">Buscar jogo</Link>
-            <Link to="/">Sobre nós</Link>
+            <Link to="/jogos">Explorar</Link>
+            <Link to="/">Sobre</Link>
+            <Link to="/">Sugerir Jogo</Link>
         </div>
 
         <div className="end-nav">
           
           {isAuthenticated && <p>Bem-vindo, <strong>{nomeUsuario}</strong></p>}
           {isAuthenticated ? (
-            
+          <>
+          <Link className="btnEntrar" to="/">
+              <i className="fa-solid fa-user"></i>
+          </Link>
+
           <Link className="btnEntrar" to="/" onClick={handleLogout}>
              Sair <i className="fa-solid fa-right-to-bracket"></i>
           </Link>
-
+          </>
           ) : (
 
           <Link className="btnEntrar" to="/login">
-            Entrar <i class="fa-solid fa-right-to-bracket"></i>
+            Entrar <i className="fa-solid fa-right-to-bracket"></i>
           </Link>
           )}
         </div>

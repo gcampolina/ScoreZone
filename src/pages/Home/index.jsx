@@ -1,9 +1,20 @@
 import "./style.css";
+import backgroundVideo from '../../../public/assets/backgroundVideo.mp4';
 
 export default function Home() {
 
 
   return (
+    <>
+
+
+    <video autoPlay loop muted className="bg-video">
+    <source src={backgroundVideo} type="video/mp4" />
+    Seu navegador não suporta vídeos em HTML5.
+    </video>
+    <div className="overlay"></div>
+
+    
    <div className="home">
       <div className="typing-box">
         <h1 className="typing">
@@ -17,8 +28,11 @@ export default function Home() {
             <span>★</span>
             <span>★</span>
         </div>
-        <a href="/jogos" className="explore-btn">Comece Agora</a>
+        <a href="/jogos" className="explore-btn">Bora Começar!</a> 
       </div>
     </div>
+
+    
+    </>
   );
 }

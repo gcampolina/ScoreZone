@@ -27,10 +27,12 @@
 }
 
 .login-container input {
+  background-color: #1e1e2f;
+  color: #ccc;
   width: 100%;
   padding: 10px;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: none;
 }
 
 

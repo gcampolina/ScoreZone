@@ -10,17 +10,27 @@
   color: #fff;
   border-radius: 12px;
   padding: 10px 20px;
-  width: 80%;
+  width: 95%;
 }
 
 .start-nav img {
   width: 100px;
 }
 
-.start-nav, .end-nav, .nav-links {
-  gap: 150px;
+.start-nav, .nav-links {
+  gap: 100px;
   display: flex;
   align-items: center;
+}
+
+.end-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.end-nav p {
+  user-select: none;
 }
 
 .nav-container {
@@ -49,7 +59,10 @@
 .nav-links a:hover {
   padding: 10px;
   border-radius: 10px;
-  background-color: #404064;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra suave */
+  transform: translateY(-1px); /* efeito de "subir" levemente */
+  transition: all 0.2s ease;
 }
 
 

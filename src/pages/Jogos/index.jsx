@@ -1,14 +1,29 @@
 import "./style.css";
 import { Link } from "react-router-dom";
-import jogos from "../../components/Jogos/jogos.js";
+
 import { useBusca } from "../../hooks/BuscaContext.jsx";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Jogos() {
   const { busca, setBusca } = useBusca();
+  const [jogos, setJogos] = useState([]);
+
+
+
+
+
+
   useEffect(() => {
     // limpa a busca ao entrar em jogos
     setBusca("");
+    // busca os jogos do backend
+    fetch("http://localhost:3000/jogos") // mude a URL conforme seu backend
+      .then((res) => res.json())
+      .then((data) => {
+      const ordenado = data.sort((a, b) => a.nome.localeCompare(b.nome));
+      setJogos(ordenado);
+      })
+      .catch((err) => console.error("Erro ao buscar jogos:", err));
   }, []);
 
   const jogosFiltrados = jogos.filter((game) =>
@@ -30,10 +45,10 @@ export default function Jogos() {
       <div className="game-grid">
         {jogosFiltrados.map((game) => (
           <Link to={`/jogo/${game.id}`} key={game.id} className="game-card">
-            <img src={game.imagem} alt={game.nome} />
+            <img src={game.imgCard} alt={game.nome} />
             <div className="info-card">
               <h2>{game.nome}</h2>
-              <p>{game.ano}</p>
+              <p>{game.anoLancamento}</p>
             </div>
           </Link>
         ))}
