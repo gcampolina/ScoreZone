@@ -1,6 +1,6 @@
 import "./style.css";
 import backgroundVideo from '../../../public/assets/backgroundVideo.mp4';
-
+import { useNavigate, Link } from "react-router-dom";
 
 
 export default function Home() {
@@ -30,7 +30,10 @@ export default function Home() {
             <span>★</span>
             <span>★</span>
         </div>
-        <a href="/jogos" className="explore-btn">Bora Começar!</a> 
+        
+
+          <Link to="/jogos" className="explore-btn">Bora Começar!</Link>
+
       </div>
     </div>
 
