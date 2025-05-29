@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Jogos() {
   const { busca, setBusca } = useBusca();
   const [jogos, setJogos] = useState([]);
-
+  const baseURL = import.meta.env.VITE_API_URL;
 
 
 
@@ -17,7 +17,7 @@ export default function Jogos() {
     // limpa a busca ao entrar em jogos
     setBusca("");
     // busca os jogos do backend
-    fetch("http://localhost:3000/jogos") // mude a URL conforme seu backend
+    fetch(`${baseURL}/jogos`) // mude a URL conforme seu backend
       .then((res) => res.json())
       .then((data) => {
       const ordenado = data.sort((a, b) => a.nome.localeCompare(b.nome));

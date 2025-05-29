@@ -10,11 +10,12 @@ export default function JogoDetalhes() {
   const [jogo, setJogo] = useState(null);
   const [loading, setLoading] = useState(true);
   const [alerta, setAlerta] = useState("");  // só o texto do alerta
+  const baseURL = import.meta.env.VITE_API_URL;
 
   
 
   useEffect(() => {
-    fetch(`http://localhost:3000/jogo/${id}`)
+    fetch(`${baseURL}/jogo/${id}`)
       .then((res) => {
         if (!res.ok) {
           throw new Error("Erro ao buscar o jogo");

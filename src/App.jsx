@@ -6,8 +6,11 @@ import Login from './pages/Login';
 import JogoDetalhes from './pages/JogoDetalhes';
 import { useState, useEffect  } from 'react';
 
-export default function App() {
 
+
+export default function App() {
+  const baseURL = import.meta.env.VITE_API_URL;
+  
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {

@@ -1,12 +1,14 @@
 import "./style.css";
 import backgroundVideo from '../../../public/assets/backgroundVideo.mp4';
 
+
+
 export default function Home() {
 
 
   return (
     <>
-
+    
 
     <video autoPlay loop muted className="bg-video">
     <source src={backgroundVideo} type="video/mp4" />

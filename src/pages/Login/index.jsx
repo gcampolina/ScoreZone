@@ -16,7 +16,8 @@ export default function Login({ setIsAuthenticated }) {
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
-  
+  const baseURL = import.meta.env.VITE_API_URL;
+
 
 
   async function handleCadastro(e) {
@@ -33,7 +34,7 @@ if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
 }
 
   try {
-    const response = await axios.post('http://localhost:3000/usuarios', {
+    const response = await axios.post(`${baseURL}/usuarios`, {
       nome,
       email,
       senha: senhaCadastro,
@@ -79,7 +80,7 @@ if (!email.match(/^[^@]+@[^@]+\.[^@]+$/)) {
     e.preventDefault();
     setErroLogin("");
     try {
-      const response = await axios.post('http://localhost:3000/login', {email: usuario, senha: senhaLogin });
+      const response = await axios.post(`${baseURL}/login`, {email: usuario, senha: senhaLogin });
 
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
