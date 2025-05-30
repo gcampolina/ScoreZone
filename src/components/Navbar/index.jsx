@@ -97,7 +97,7 @@ useEffect(() => {
         
           {isAuthenticated &&    
           <div className="text-welcome">
-          <p style={{ marginBottom: '20px' }}>Bem-vindo, <strong>{nomeUsuario}</strong></p>
+          <p>Bem-vindo, <strong>{nomeUsuario}</strong></p>
           </div>
           }
           {isAuthenticated ? (

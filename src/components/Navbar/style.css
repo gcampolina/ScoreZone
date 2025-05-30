@@ -29,6 +29,7 @@
 }
 
 .text-welcome {
+  margin-bottom: 20px;
   user-select: none;
   transition: opacity 0.3s ease;
 }
@@ -86,14 +87,9 @@
 }
 
 .sidebar-toggle:hover {
-  background: #ccc;
-  color: #000;
+  background: #715199;
 }
 
-.menu-link:hover{
-  color: #000;
-  background: #ccc;
-}
 
 
 .sidebar-header .sidebar-toggle span {
@@ -127,13 +123,24 @@
 
 .menu-link {
   text-decoration: none;
+  align-items: center;
   display: flex;
   gap: 12px;
   white-space: nowrap;
   padding: 12px 15px;
   border-radius: 8px;
-  color: #fff;
   background: #0e0e16;
+  transition: 0.2s ease;
+}
+
+
+
+.menu-link:hover{
+  background: #715199;
+}
+
+.menu-link p {
+  color: #fff;
   transition: 0.2s ease;
 }
 
