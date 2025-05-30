@@ -58,7 +58,7 @@ export default function Estrelas({ jogoId, onAlerta  }) {
       return;
     }
     try {
-      const res = await fetch(`${baseURL}votar`, {
+      const res = await fetch(`${baseURL}/votar`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
