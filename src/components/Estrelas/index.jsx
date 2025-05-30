@@ -10,7 +10,7 @@ export default function Estrelas({ jogoId, onAlerta  }) {
   const [totalVotos, setTotalVotos] = useState(0);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-
+  const baseURL = import.meta.env.VITE_API_URL;
 
 
  async function carregarDados() {
@@ -18,7 +18,7 @@ export default function Estrelas({ jogoId, onAlerta  }) {
   setLoading(true);
   
   try {
-    const res = await fetch("http://localhost:3000/voto?jogoId=" + jogoId, {
+    const res = await fetch(`${baseURL}/voto?jogoId=` + jogoId, {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("token")}`,
       },
@@ -58,7 +58,7 @@ export default function Estrelas({ jogoId, onAlerta  }) {
       return;
     }
     try {
-      const res = await fetch("http://localhost:3000/votar", {
+      const res = await fetch(`${baseURL}votar`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
