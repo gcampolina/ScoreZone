@@ -144,6 +144,11 @@
   transition: 0.2s ease;
 }
 
+
+.sidebar-toggle-mobile {
+  display: none;
+}
+
 @media (max-width: 1366px) {
  .sidebar-content .menu-link {
   padding: 12px 10px;
@@ -152,11 +157,71 @@
 }
 
 @media (max-width: 768px) {
- .sidebar-content .menu-link {
-  padding: 12px 15px;
+
+
+
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 220px;
+    background: #1f1f2f;
+    z-index: 998;
+    transition: transform 0.4s ease;
+    transform: translateX(0); /* visível por padrão */
+  }
+
+  .sidebar.collapsed {
+    transform: translateX(-100%); /* esconde fora da tela */
+  }
+
+  .sidebar-header .sidebar-toggle {
+    display: none; /* esconde o botão interno */
+  }
+
+  .sidebar-header img{
+    width: 120px;
+    height: 120px;
+    margin-left: 30px;
+    transition: 0.1s ease;
+  }
+
+.sidebar-toggle-mobile {
+  position: fixed; /* fixo na tela */
+  top: 10px;
+  left: 20px;
+  height: 40px;
+  width: 40px;
+  z-index: 999; /* pra ficar na frente */
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #0e0e16;
+  transition: 0.2s ease;
 }
 
+
+
+.rotate-left {
+  transform: rotate(180deg); /* Gira para a esquerda */
+  transition: transform 0.4s ease;
 }
+
+.rotate-right {
+  transform: rotate(0deg); /* Posição padrão */
+  transition: transform 0.4s ease;
+}
+
+
+}
+
+
+
 
 
 .sidebar .sidebar-footer {
@@ -170,123 +235,4 @@
   border-top: 1px solid #171724;
   scrollbar-color: #ccc transparent;
 }
-
-
-
-
-
-
-
-/*BACKUP*/
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 40px auto;
-  z-index: 1000;
-  background-color: transparent;
-  color: #fff;
-  border-radius: 12px;
-  padding: 10px 20px;
-  width: 95%;
-  
-}
-
-
-
-
-.start-nav img {
-  width: 100px;
-}
-
-.start-nav, .nav-links {
-  gap: 100px;
-  display: flex;
-  align-items: center;
-}
-
-.end-nav {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.end-nav p {
-  user-select: none;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #fff;
-  text-decoration: none;
-}
-
-
-
-.nav-links a {
-  padding: 10px;
-  text-transform: uppercase;
-  margin-left: 20px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-links a:hover {
-  padding: 10px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* sombra suave */
-  transform: translateY(-1px); /* efeito de "subir" levemente */
-  transition: all 0.2s ease;
-}
-
-
-.btnEntrar {
-  padding: 10px 16px;
-  background-color: transparent;
-  color: white;
-  border-radius: 6px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  font-size: 1rem;
-  border: 1px solid #fff;
-}
-
-.btnEntrar:hover {
-  color: #000;
-  background-color: #fff;
-}
-
-
-
-/* CSS PRO BTN ENTRAR */
-
-.bn54 {
-  position: relative;
-  outline: none;
-  text-decoration: none;
-  border-radius: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  height: 45px;
-  width: 130px;
-  opacity: 1;
-  background-color: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.6);
-}
-
-
 

@@ -10,7 +10,7 @@ export default function Home() {
     <>
     
 
-    <video autoPlay loop muted className="bg-video">
+    <video autoPlay loop muted playsInline disablePictureInPicture className="bg-video">
     <source src={backgroundVideo} type="video/mp4" />
     Seu navegador não suporta vídeos em HTML5.
     </video>
