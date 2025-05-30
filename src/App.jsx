@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate  } from 'react-router-dom';
+import {Routes, Route, Navigate  } from 'react-router-dom';
 import NavBar from './components/Navbar';
 import Home from './pages/Home';
 import Jogos from './pages/Jogos';
@@ -23,29 +23,26 @@ export default function App() {
 
 
   return (
-    <>
-
-   
-      
-
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
       <NavBar isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
 
-      
-  
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/jogos" element={<Jogos />} />
-        <Route
-          path="/login"
-          element={
-            isAuthenticated ? <Navigate to="/" replace /> : <Login setIsAuthenticated={setIsAuthenticated} />
-          }
-        />
-        <Route path="/jogo/:id" element={<JogoDetalhes />} />
-      </Routes>
-      
-      
-      
-    </>
-  );  
+      <main style={{ flex: 1 }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/jogos" element={<Jogos />} />
+          <Route
+            path="/login"
+            element={
+              isAuthenticated ? (
+                <Navigate to="/" replace />
+              ) : (
+                <Login setIsAuthenticated={setIsAuthenticated} />
+              )
+            }
+          />
+          <Route path="/jogo/:id" element={<JogoDetalhes />} />
+        </Routes>
+      </main>
+    </div>
+  );
 }

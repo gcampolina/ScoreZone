@@ -42,6 +42,7 @@ export default function Jogos() {
       />
 
 <div className="scrollable-games">
+  
       <div className="game-grid">
         {jogosFiltrados.map((game) => (
           <Link to={`/jogo/${game.id}`} key={game.id} className="game-card">

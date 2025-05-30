@@ -20,9 +20,9 @@ export default function Home() {
    <div className="home">
       <div className="typing-box">
         <h1 className="typing">
-          Quem joga também vota. Mostre sua visão gamer!
+          Mostre sua visão gamer!
         </h1>
-        <p className="subtext">Explore, avalie e compartilhe sua opinião na ScoreZone.</p>
+        <p className="subtext">Explore, avalie e compartilhe sua opinião na GameScore.</p>
         <div className="stars-animation">
             <span>★</span>
             <span>★</span>

@@ -1,23 +1,83 @@
-
+/* Estilo base da home */
 .home {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(70vh - 80px); /* considerando que a navbar tem uns 80px */
+  flex-direction: column;
+
+  padding: 20px 10px;
+  margin: 0 auto;
+
+  width: 100%;
+  max-width: 600px; /* ou o que você achar confortável */
+  height: 100vh;
+
   color: white;
   text-align: center;
-  margin: 120px auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 2;
 }
 
+/* Caixa de texto */
 .typing-box {
   color: #fff;
   z-index: 1;
-  max-width: 800px;
+
+  /* largura máxima pra não estourar */
+  max-width: 100%;
+  width: 300px;
+}
+
+
+/* Subtexto */
+.subtext {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+/* Botão */
+.explore-btn {
+  display: inline-block;
+  padding: 0.5em 1.2em;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  transition: all 0.2s;
+  position: relative;
+  animation: bn13bouncy 3s infinite linear;
+}
+
+.explore-btn:hover {
+  background-color: white;
+  color: #000000;
+}
+
+/* Estrelas */
+.stars-animation {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.stars-animation span {
+  color: #333;
+  animation: starGlow 2s infinite;
+  animation-delay: calc(0.2s * var(--i));
 }
 
 .typing {
   overflow: hidden;
   white-space: nowrap;
+  font-size: 27px;
   border-right: 2px solid white;
   
   margin-bottom: 20px;
@@ -33,120 +93,37 @@
   50% { border-color: transparent }
 }
 
-.subtext {
-  font-size: 1.2rem;
-  
-  color: #ccc;
-}
-
-
-.explore-btn {
-  display: inline-block;
-  padding: 0.65em 1.6em;
-  border: 3px solid #ffffff;
-  margin: 0 0.3em 0.3em 0;
-  border-radius: 0.12em;
-  box-sizing: border-box;
-  text-decoration: none;
-  color: #ffffff;
-  text-align: center;
-  transition: all 0.2s;
-  animation: bn13bouncy 3s infinite linear;
-  position: relative;
-  border-radius: 6px;
-  font-weight: bold;
-}
-
-.explore-btn:hover {
-  color: #000;
-  background-color: #fff;
-}
-
-.explore-btn:hover {
-  background-color: white;
-  color: #000000;
-}
-
 @keyframes bn13bouncy {
-  0% {
-    top: 0em;
-  }
-  40% {
-    top: 0em;
-  }
-  43% {
-    top: -0.9em;
-  }
-  46% {
-    top: 0em;
-  }
-  48% {
-    top: -0.4em;
-  }
-  50% {
-    top: 0em;
-  }
-  100% {
-    top: 0em;
-  }
+  0% { top: 0em; }
+  40% { top: 0em; }
+  43% { top: -0.9em; }
+  46% { top: 0em; }
+  48% { top: -0.4em; }
+  50% { top: 0em; }
+  100% { top: 0em; }
 }
-
-
-
-.stars-animation {
-  user-select: none;
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.stars-animation span {
-  color: #333; /* cor base (sem preenchimento) */
-  animation: starGlow 2s infinite;
-  animation-delay: calc(0.2s * var(--i));
-}
-
-/* Animação com atraso progressivo */
-.stars-animation span:nth-child(1) { --i: 1; }
-.stars-animation span:nth-child(2) { --i: 2; }
-.stars-animation span:nth-child(3) { --i: 3; }
-.stars-animation span:nth-child(4) { --i: 4; }
-.stars-animation span:nth-child(5) { --i: 5; }
 
 @keyframes starGlow {
   0%   { color: #333; transform: scale(1); }
   50%  { color: #495cc7; transform: scale(1.3); }
   100% { color: #333; transform: scale(1); }
 }
-
-
 .bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
-  pointer-events: none;
-  object-position: center 80%;
-  
+  z-index: 0;
 }
 
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(30, 30, 47, 0.6); /* Escurece o vídeo */
-  z-index: 0;
-  pointer-events: none;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
-.home-content {
-  position: relative;
-  z-index: 2;
-}
+

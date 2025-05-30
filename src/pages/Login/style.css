@@ -1,19 +1,18 @@
 .login-container {
-  max-width: 400px;
-  margin: 250px auto;
+  max-width: 800px;
+  margin: 20vh auto;
   padding: 70px;
   color: #fff;
-  
   background: transparent;
   border-radius: 10px;
-  box-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
   text-align: center;
   justify-content: center;
+  width: 90%; /* ajuda na responsividade */
+  box-sizing: border-box;
 }
 
-
 .msgContainer {
-    margin: 150px auto;
+    margin: 150px 130px;
 }
 
 
@@ -108,4 +107,47 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 40px;
+    margin: 10px auto;
+  }
+
+  .btnEntrar {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 30px 20px;
+    margin: 250px auto;
+  }
+
+  .formLogin {
+    gap: 16px;
+  }
+
+  .msgContainer {
+    margin: 150px auto;
+  }
+
+  .erro-login,
+  .sucess-login {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .login-container input {
+    font-size: 0.9rem;
+  }
+
+  .btnEntrar {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
 }
