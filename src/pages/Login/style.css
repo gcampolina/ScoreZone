@@ -46,6 +46,7 @@
   transition: background-color 0.3s ease;
   font-size: 1rem;
   border: 1px solid #fff;
+  width: 100%;
 }
 
 .btnEntrar:hover {
@@ -112,24 +113,23 @@
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
-  .login-container {
-    padding: 40px;
-    margin: 10px auto;
-  }
+ 
 
-  .btnEntrar {
-    max-width: 100%;
-  }
+  
 }
 
 @media (max-width: 480px) {
   .login-container {
     padding: 30px 20px;
-    margin: 250px auto;
+    margin: 180px auto;
   }
 
   .formLogin {
     gap: 16px;
+  }
+
+  .btnEntrar {
+    width: 100%;
   }
 
   .msgContainer {
